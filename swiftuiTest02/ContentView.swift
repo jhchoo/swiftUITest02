@@ -14,8 +14,7 @@ struct ContentView: View {
                              "02.",
                              "03.",
                              "04.",
-                             "05."
-                             ]
+                             "05."]
                             
     var body: some View {
         ZStack() {
