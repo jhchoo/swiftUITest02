@@ -15,7 +15,9 @@ struct ContentView: View {
                              "03.",
                              "04.",
                              "05."]
-                            
+    
+    // var landmark = LandmarkEntity(from: <#Decoder#>)
+    
     var body: some View {
         ZStack() {
             Color.red.ignoresSafeArea()
@@ -23,9 +25,9 @@ struct ContentView: View {
                 List {
                     ForEach(0..<listName.count) { index in
                         if index == 0 {
-                            NavigationLink(listName[index], destination: S01AppleGuideView())
+                            NavigationLink(listName[index], destination: S01AppleLandmarkDetail(landmark: landmarks[0]))
                         } else if index == 1 {
-                            NavigationLink(listName[index], destination: S01AppleList())
+                            NavigationLink(listName[index], destination: S01AppleLandmarkList())
                         } else {
                            Text(String(listName[index]))
                            .listRowBackground(Color.green)
