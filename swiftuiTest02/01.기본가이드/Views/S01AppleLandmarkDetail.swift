@@ -1,0 +1,58 @@
+//
+//  S01AppleLandmarkDetail.swift
+//  swiftuiTest02
+//
+//  Created by jhchoo on 2021/08/02.
+//
+
+import SwiftUI
+
+struct S01AppleLandmarkDetail: View {
+    
+    var landmark: LandmarkEntity
+    
+    var body: some View {
+        ScrollView {
+            
+            MapView(coordinate: landmark.locationCoordinate)
+                .ignoresSafeArea(edges: .top)
+                .frame(height: 300)
+            
+            if let image = landmark.image {
+                CircleImage(image: image)
+                    .offset(y: -130)
+                    .padding(.bottom, -130)
+            }
+        
+            VStack(alignment: .leading) {
+                Text(landmark.name)
+                    .font(.title)
+
+                HStack {
+                    Text(landmark.park)
+                    Spacer()
+                    Text(landmark.state)
+                }
+                .font(.subheadline)
+                .foregroundColor(.secondary)
+
+                Divider()
+
+                Text("About \(landmark.name)")
+                    .font(.title2)
+                Text(landmark.description)
+            }
+            .padding()
+
+            Spacer()
+        }
+        .navigationTitle(landmark.name)
+        .navigationBarTitleDisplayMode(.inline)
+    }
+}
+
+struct S01AppleLandmarkDetail_Previews: PreviewProvider {
+    static var previews: some View {
+        S01AppleLandmarkDetail(landmark: landmarks[0])
+    }
+}
