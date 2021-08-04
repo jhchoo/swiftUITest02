@@ -8,13 +8,35 @@
 import SwiftUI
 
 struct S01AppleLandmarkList: View {
+    @EnvironmentObject var modelData: ModelData
+    @State private var showFavoritesOnly = true
+    
+    var filteredLandmarks: [LandmarkVO] {
+        modelData.landmarks.filter { landmark in
+            (!showFavoritesOnly || landmark.isFavorite)
+        }
+    }
+    
     var body: some View {
-            List(landmarks) { landmark in
+//            List(landmarks) { landmark in
+//                NavigationLink(destination: S01AppleLandmarkDetail(landmark: landmark)) {
+//                    LandmarkRow(landmark: landmark)
+//                }
+//            }
+        
+        List {
+            
+            Toggle(isOn: $showFavoritesOnly) {
+                Text("Favorites only")
+            }
+            
+            ForEach(filteredLandmarks) { landmark in
                 NavigationLink(destination: S01AppleLandmarkDetail(landmark: landmark)) {
                     LandmarkRow(landmark: landmark)
                 }
             }
-            .navigationTitle("Landmarks")
+        }
+        .navigationTitle("Landmarks")
     }
 }
 

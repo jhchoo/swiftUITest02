@@ -8,8 +8,14 @@
 import SwiftUI
 
 struct S01AppleLandmarkDetail: View {
+    // 수정자가 부모에 적용된 한 속성은 자동으로 값을 가져 옵니다.
+    @EnvironmentObject var modelData: ModelData
     
-    var landmark: LandmarkEntity
+    var landmarkIndex: Int {
+        modelData.landmarks.firstIndex(where: { $0.id == landmark.id })!
+    }
+    
+    var landmark: LandmarkVO
     
     var body: some View {
         ScrollView {
@@ -25,9 +31,17 @@ struct S01AppleLandmarkDetail: View {
             }
         
             VStack(alignment: .leading) {
-                Text(landmark.name)
-                    .font(.title)
+                
+//                Text(landmark.name)
+//                    .font(.title)
 
+                HStack {
+                    Text(landmark.name)
+                        .font(.title)
+                        .foregroundColor(.primary)
+                    FavoriteButton(isSet: $modelData.landmarks[landmarkIndex].isFavorite)
+                }
+                
                 HStack {
                     Text(landmark.park)
                     Spacer()
@@ -53,6 +67,6 @@ struct S01AppleLandmarkDetail: View {
 
 struct S01AppleLandmarkDetail_Previews: PreviewProvider {
     static var previews: some View {
-        S01AppleLandmarkDetail(landmark: landmarks[0])
+        S01AppleLandmarkDetail(landmark: ModelData().landmarks[0])
     }
 }

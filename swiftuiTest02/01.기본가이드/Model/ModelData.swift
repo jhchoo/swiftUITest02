@@ -6,9 +6,15 @@
 //
 
 import Foundation
+import Combine
 
-// 이렇게 글로벌 변수로 샘플 사용 한다.
-var landmarks: [LandmarkEntity] = load("landmarkData.json")
+// SwiftUI는 뷰에 영향을 줄 수 있는 관찰 가능한 객체의 변경 사항을 감시하고 변경 후 뷰의 올바른 버전을 표시합니다.
+final class ModelData: ObservableObject {
+    // 이렇게 글로벌 변수로 샘플 사용 한다.
+    @Published var landmarks: [LandmarkVO] = load("landmarkData.json")
+}
+
+
 
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data

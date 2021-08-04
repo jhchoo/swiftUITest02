@@ -25,7 +25,7 @@ struct ContentView: View {
                 List {
                     ForEach(0..<listName.count) { index in
                         if index == 0 {
-                            NavigationLink(listName[index], destination: S01AppleLandmarkDetail(landmark: landmarks[0]))
+                            NavigationLink(listName[index], destination: S01AppleLandmarkDetail(landmark: ModelData().landmarks[0]))
                         } else if index == 1 {
                             NavigationLink(listName[index], destination: S01AppleLandmarkList())
                         } else {
@@ -46,6 +46,7 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             ContentView()
+                .environmentObject(ModelData())
         }
     }
 }
