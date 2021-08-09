@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		56131FDE26C0C989000C4E60 /* S03HexagonParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56131FDD26C0C989000C4E60 /* S03HexagonParameters.swift */; };
 		56B5791226B9F55A006D8D0F /* LandmarkVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B5791126B9F55A006D8D0F /* LandmarkVO.swift */; };
 		56B5791426B9F589006D8D0F /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B5791326B9F589006D8D0F /* ModelData.swift */; };
 		56B5791926B9F614006D8D0F /* landmarkData.json in Resources */ = {isa = PBXBuildFile; fileRef = 56B5791826B9F614006D8D0F /* landmarkData.json */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		56131FDD26C0C989000C4E60 /* S03HexagonParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = S03HexagonParameters.swift; sourceTree = "<group>"; };
 		56B5791126B9F55A006D8D0F /* LandmarkVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkVO.swift; sourceTree = "<group>"; };
 		56B5791326B9F589006D8D0F /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		56B5791826B9F614006D8D0F /* landmarkData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = landmarkData.json; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 			children = (
 				9EF5A51026B7F9E700268B6B /* S01AppleLandmarkDetail.swift */,
 				9EE5AC6D26B9DB5000E0665D /* S02AppleLandmarkList.swift */,
+				56131FDD26C0C989000C4E60 /* S03HexagonParameters.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 				9EF5A50126B7F58200268B6B /* ContentView.swift in Sources */,
 				9EE5AC6C26B9D87900E0665D /* S02BasicGuideView.swift in Sources */,
 				9EE5AC6E26B9DB5000E0665D /* S02AppleLandmarkList.swift in Sources */,
+				56131FDE26C0C989000C4E60 /* S03HexagonParameters.swift in Sources */,
 				9EF5A4FF26B7F58200268B6B /* swiftuiTest02App.swift in Sources */,
 				56B5791226B9F55A006D8D0F /* LandmarkVO.swift in Sources */,
 				56BCCF4A26BA0A2600D46E00 /* MapView.swift in Sources */,
