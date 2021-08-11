@@ -25,7 +25,6 @@ struct S01AppleLandmarkList: View {
 //            }
         
         List {
-            
             Toggle(isOn: $showFavoritesOnly) {
                 Text("Favorites only")
             }
