@@ -12,6 +12,9 @@ import Combine
 final class ModelData: ObservableObject {
     // 이렇게 글로벌 변수로 샘플 사용 한다.
     @Published var landmarks: [LandmarkVO] = load("landmarkData.json")
+    // 하이킹 데이터를 처음 로드한 후에는 절대 수정하지 않기 때문에 @Published속성 으로 표시할 필요가 없습니다 .
+    var hikes: [Hike] = load("hikeData.json")
+
 }
 
 
