@@ -17,6 +17,12 @@ struct S01AppleLandmarkList: View {
         }
     }
     
+    enum Tab {
+            case featured
+            case list
+        }
+    @State private var selection: Tab = .list
+    
     var body: some View {
 //            List(landmarks) { landmark in
 //                NavigationLink(destination: S01AppleLandmarkDetail(landmark: landmark)) {
@@ -24,16 +30,30 @@ struct S01AppleLandmarkList: View {
 //                }
 //            }
         
-        List {
-            Toggle(isOn: $showFavoritesOnly) {
-                Text("Favorites only")
-            }
+        TabView(selection: $selection) {
             
-            ForEach(filteredLandmarks) { landmark in
-                NavigationLink(destination: S01AppleLandmarkDetail(landmark: landmark)) {
-                    LandmarkRow(landmark: landmark)
+            List {
+                Toggle(isOn: $showFavoritesOnly) {
+                    Text("Favorites only")
+                }
+                
+                ForEach(filteredLandmarks) { landmark in
+                    NavigationLink(destination: S01AppleLandmarkDetail(landmark: landmark)) {
+                        LandmarkRow(landmark: landmark)
+                    }
                 }
             }
+            .tabItem {
+                Label("List", systemImage: "list.bullet")
+            }
+            .tag(Tab.list)
+            
+            
+            S03CategoryHome()
+            .tabItem {
+                Label("Featured", systemImage: "star")
+            }
+            .tag(Tab.featured)
         }
         .navigationTitle("Landmarks")
     }

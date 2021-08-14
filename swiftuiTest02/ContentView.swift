@@ -15,7 +15,10 @@ struct ContentView: View {
                              "03. 애플 복잡한 인터페이스 구성",
                              "04.",
                              "05."]
-    
+    enum Tab {
+            case featured
+            case list
+        }
     // var landmark = LandmarkEntity(from: <#Decoder#>)
     
     var body: some View {

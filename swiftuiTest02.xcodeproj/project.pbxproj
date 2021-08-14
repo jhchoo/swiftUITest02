@@ -28,6 +28,8 @@
 		563650B426C38F140056076C /* HikeGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563650B326C38F140056076C /* HikeGraph.swift */; };
 		563650B726C38F2C0056076C /* GraphCapsule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563650B626C38F2C0056076C /* GraphCapsule.swift */; };
 		563650B926C3937F0056076C /* S03CategoryHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563650B826C3937F0056076C /* S03CategoryHome.swift */; };
+		9EDF5A0A26C79F17005D27AF /* CategoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDF5A0926C79F17005D27AF /* CategoryRow.swift */; };
+		9EDF5A0D26C7B465005D27AF /* CategoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDF5A0C26C7B465005D27AF /* CategoryItem.swift */; };
 		9EE5AC6C26B9D87900E0665D /* S02BasicGuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE5AC6B26B9D87900E0665D /* S02BasicGuideView.swift */; };
 		9EF5A4FF26B7F58200268B6B /* swiftuiTest02App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF5A4FE26B7F58200268B6B /* swiftuiTest02App.swift */; };
 		9EF5A50126B7F58200268B6B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF5A50026B7F58200268B6B /* ContentView.swift */; };
@@ -58,6 +60,8 @@
 		563650B326C38F140056076C /* HikeGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikeGraph.swift; sourceTree = "<group>"; };
 		563650B626C38F2C0056076C /* GraphCapsule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphCapsule.swift; sourceTree = "<group>"; };
 		563650B826C3937F0056076C /* S03CategoryHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = S03CategoryHome.swift; sourceTree = "<group>"; };
+		9EDF5A0926C79F17005D27AF /* CategoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRow.swift; sourceTree = "<group>"; };
+		9EDF5A0C26C7B465005D27AF /* CategoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItem.swift; sourceTree = "<group>"; };
 		9EE5AC6B26B9D87900E0665D /* S02BasicGuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = S02BasicGuideView.swift; sourceTree = "<group>"; };
 		9EF5A4FB26B7F58200268B6B /* swiftuiTest02.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swiftuiTest02.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EF5A4FE26B7F58200268B6B /* swiftuiTest02App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftuiTest02App.swift; sourceTree = "<group>"; };
@@ -83,10 +87,11 @@
 			isa = PBXGroup;
 			children = (
 				563650AC26C38DC70056076C /* Hiking */,
+				5636509F26C382F20056076C /* Badges */,
 				5636508726C380AF0056076C /* Resources */,
 				5636508926C380AF0056076C /* Model */,
-				5636509F26C382F20056076C /* Badges */,
 				5636508C26C380AF0056076C /* HelperViews */,
+				9EDF5A0B26C7B445005D27AF /* Category */,
 				5636509126C380AF0056076C /* Views */,
 			);
 			path = "01.애플샘플";
@@ -153,6 +158,15 @@
 				563650B626C38F2C0056076C /* GraphCapsule.swift */,
 			);
 			path = Hiking;
+			sourceTree = "<group>";
+		};
+		9EDF5A0B26C7B445005D27AF /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				9EDF5A0C26C7B465005D27AF /* CategoryItem.swift */,
+				9EDF5A0926C79F17005D27AF /* CategoryRow.swift */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 		9EE5AC6A26B9D6F300E0665D /* 02.기본가이드 */ = {
@@ -281,9 +295,11 @@
 				563650B926C3937F0056076C /* S03CategoryHome.swift in Sources */,
 				9EF5A50126B7F58200268B6B /* ContentView.swift in Sources */,
 				5636509826C380AF0056076C /* MapView.swift in Sources */,
+				9EDF5A0A26C79F17005D27AF /* CategoryRow.swift in Sources */,
 				563650A826C382F20056076C /* BadgeBackground.swift in Sources */,
 				5636509E26C380AF0056076C /* S01AppleLandmarkDetail.swift in Sources */,
 				563650B226C38EE30056076C /* HikeDetail.swift in Sources */,
+				9EDF5A0D26C7B465005D27AF /* CategoryItem.swift in Sources */,
 				9EE5AC6C26B9D87900E0665D /* S02BasicGuideView.swift in Sources */,
 				5636509B26C380AF0056076C /* FavoriteButton.swift in Sources */,
 				5636509D26C380AF0056076C /* S02AppleLandmarkList.swift in Sources */,
