@@ -46,6 +46,7 @@ struct S01AppleLandmarkList_Previews: PreviewProvider {
             S01AppleLandmarkList()
                 .previewDevice(PreviewDevice(rawValue: deviceName))
                 .previewDisplayName(deviceName)
+                .environmentObject(ModelData())
         }
     }
 }

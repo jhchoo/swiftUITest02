@@ -68,5 +68,6 @@ struct S01AppleLandmarkDetail: View {
 struct S01AppleLandmarkDetail_Previews: PreviewProvider {
     static var previews: some View {
         S01AppleLandmarkDetail(landmark: ModelData().landmarks[0])
+            .environmentObject(ModelData())
     }
 }
