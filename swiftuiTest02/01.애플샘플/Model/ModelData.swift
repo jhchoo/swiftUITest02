@@ -16,6 +16,9 @@ final class ModelData: ObservableObject {
     // 하이킹 데이터를 처음 로드한 후에는 절대 수정하지 않기 때문에 @Published속성 으로 표시할 필요가 없습니다 .
     var hikes: [Hike] = load("hikeData.json")
     
+    // 사용자 정보 제공
+    @Published var profile = Profile.default
+    
     // 리스트를 카테고리에 따라 그룹핑 한다. - 이것도 실시간이네.
     var categories: [String: [LandmarkVO]] {
         Dictionary(

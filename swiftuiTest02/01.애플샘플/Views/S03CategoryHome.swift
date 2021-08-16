@@ -9,6 +9,7 @@ import SwiftUI
 
 struct S03CategoryHome: View {
     @EnvironmentObject var modelData: ModelData
+    @State private var showingProfile = false
 
     var body: some View {
         List {
@@ -29,7 +30,22 @@ struct S03CategoryHome: View {
             }
             .listRowInsets(EdgeInsets())
         }
+        // 리스트 스타일을 지정할 수 있다.
+        .listStyle(InsetListStyle()) // https://seons-dev.tistory.com/139
         .navigationTitle("Featured")
+        .toolbar {
+            Button(action: {
+                    showingProfile.toggle()
+            }) {
+                Image(systemName: "person.crop.circle")
+                    .accessibilityLabel("User Profile")
+            }
+        }
+        .sheet(isPresented: $showingProfile) {
+            // 이게... PUSH 이동이네..
+            ProfileHost()
+                .environmentObject(modelData)
+        }
     }
 }
 
