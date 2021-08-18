@@ -19,7 +19,7 @@ enum AppStyles {
     static let large: CGFloat = 18
     static let xlarge: CGFloat = 21
   }
-}
+} 
 /*
  shared instance는 언제 만드는가
  지금까지 설정(configuration)이나 비싼 object에 static property를 사용할 수 있다는 것과,
@@ -36,5 +36,10 @@ struct swiftuiTest02App: App {
             ContentView()
                 .environmentObject(modelData)	
         }
+        
+        #if os(watchOS)
+        WKNotificationScene(controller: NotificationController.self, category: "LandmarkNear")
+        #endif
+
     }
 }
