@@ -19,7 +19,11 @@ enum AppStyles {
     static let large: CGFloat = 18
     static let xlarge: CGFloat = 21
   }
+<<<<<<< HEAD
 } 
+=======
+}
+>>>>>>> 8ea6bfb... 개발: UI 컨트롤 작업 완료.
 /*
  shared instance는 언제 만드는가
  지금까지 설정(configuration)이나 비싼 object에 static property를 사용할 수 있다는 것과,
