@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// 와치 알람뷰
 struct NotificationView: View {
     var title: String?
     var message: String?

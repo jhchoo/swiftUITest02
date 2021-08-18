@@ -8,18 +8,21 @@
 import SwiftUI
 
 // 여기서 enum 을 통해 static property를 사용하고 있는 이유는 설정 object를 인스턴스로 만들지 못하도록 하고 싶었기 때문입니다.
+#if os(iOS)
 enum AppStyles {
-  enum Colors {
-    static let mainColor = UIColor(red: 1, green: 0.2, blue: 0.2, alpha: 1)
-    static let darkAccent = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)
-  }
-  enum FontSizes {
-    static let small: CGFloat = 12
-    static let medium: CGFloat = 14
-    static let large: CGFloat = 18
-    static let xlarge: CGFloat = 21
-  }
-} 
+    enum Colors {
+        static let mainColor = UIColor(red: 1, green: 0.2, blue: 0.2, alpha: 1)
+        static let darkAccent = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)
+    }
+    enum FontSizes {
+        static let small: CGFloat = 12
+        static let medium: CGFloat = 14
+        static let large: CGFloat = 18
+        static let xlarge: CGFloat = 21
+    }
+}
+#endif
+
 /*
  shared instance는 언제 만드는가
  지금까지 설정(configuration)이나 비싼 object에 static property를 사용할 수 있다는 것과,
@@ -32,14 +35,32 @@ struct swiftuiTest02App: App {
     @StateObject private var modelData = ModelData()
     
     var body: some Scene {
-        WindowGroup {
+        let mainWindow = WindowGroup {
             ContentView()
-                .environmentObject(modelData)	
+                .environmentObject(modelData)
         }
+
+        // 맥에서만 사용하는 커맨드 메뉴 추가
+        #if os(macOS)
+        mainWindow
+            .commands {
+                LandmarkCommands()
+            }
+        #else
+        mainWindow
+        #endif
         
+        // 와치 알람 화면 추가
         #if os(watchOS)
         WKNotificationScene(controller: NotificationController.self, category: "LandmarkNear")
         #endif
-
+        
+        // 맥에서만 사용하는 설정 추가.
+        #if os(macOS)
+        Settings {
+            LandmarkSettings()
+        }
+        #endif
+        
     }
 }

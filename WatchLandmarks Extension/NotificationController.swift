@@ -9,6 +9,7 @@ import WatchKit
 import SwiftUI
 import UserNotifications
 
+// 와치 알람 컨트롤러
 class NotificationController: WKUserNotificationHostingController<NotificationView> {
     var landmark: LandmarkVO?
       var title: String?
