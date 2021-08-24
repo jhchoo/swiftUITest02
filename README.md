@@ -1,7 +1,7 @@
 # swiftUITest02
 두번째 복습 프로젝트
 
-애플 공식 사이트 [https://developer.apple.com/tutorials/swiftui]
+### 애플 공식 사이트 [https://developer.apple.com/tutorials/swiftui]
 
 1. [처음 생성 및 Combine 사용](https://developer.apple.com/tutorials/swiftui/creating-and-combining-views)
 2. [목록 작성 및 탐색](https://developer.apple.com/tutorials/swiftui/building-lists-and-navigation) 
@@ -16,6 +16,8 @@
 9. [프레임워크 통합 watchOS 앱 만들기](https://developer.apple.com/tutorials/swiftui/creating-a-watchos-app)
 10. [macOS 앱 만들기](https://developer.apple.com/tutorials/swiftui/creating-a-macos-app)
 
-개발하는 정대리 [https://www.youtube.com/watch?v=LiWtjXLlhYw&list=PLgOlaPUIbynqyJHiTEv7CFaXd8g5jtogT]
+### 개발하는 정대리 [아이폰 스위프트UI 뽀개기 씨리즈](https://www.youtube.com/watch?v=LiWtjXLlhYw&list=PLgOlaPUIbynqyJHiTEv7CFaXd8g5jtogT)
+
+1. 애플샘플 소개, 
 
 기억이 안나서 한번 더 복습한다.

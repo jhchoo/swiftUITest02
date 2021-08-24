@@ -13,7 +13,7 @@ struct ContentView: View {
     let listName:[String] = ["01. 애플 기본 샘플",
                              "02. 애플 리스트 샘플",
                              "03. 애플 복잡한 인터페이스 구성",
-                             "04.",
+                             "04. 정대리 샘플1",
                              "05."]
     enum Tab {
             case featured
@@ -33,9 +33,13 @@ struct ContentView: View {
                             NavigationLink(listName[index], destination: S01AppleLandmarkList())
                         } else if index == 2 {
                             NavigationLink(listName[index], destination: S03CategoryHome())
+                        } else if index == 3 {
+                            NavigationLink(listName[index], destination: S02BasicGuideView())
                         } else {
                            Text(String(listName[index]))
                            .listRowBackground(Color.green)
+                            
+                            
                         }
                     }
                 }
