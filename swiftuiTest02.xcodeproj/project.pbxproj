@@ -92,6 +92,7 @@
 		9EDF5A1026C7DC54005D27AF /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDF5A0F26C7DC54005D27AF /* Profile.swift */; };
 		9EDF5A1226C7DD1D005D27AF /* ProfileHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDF5A1126C7DD1D005D27AF /* ProfileHost.swift */; };
 		9EE5AC6C26B9D87900E0665D /* S02BasicGuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE5AC6B26B9D87900E0665D /* S02BasicGuideView.swift */; };
+		9EE9D34726D8D31E00D7ADE0 /* MyTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE9D34626D8D31E00D7ADE0 /* MyTextView.swift */; };
 		9EF5A4FF26B7F58200268B6B /* swiftuiTest02App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF5A4FE26B7F58200268B6B /* swiftuiTest02App.swift */; };
 		9EF5A50126B7F58200268B6B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF5A50026B7F58200268B6B /* ContentView.swift */; };
 		9EF5A50326B7F58400268B6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EF5A50226B7F58400268B6B /* Assets.xcassets */; };
@@ -201,6 +202,7 @@
 		9EDF5A0F26C7DC54005D27AF /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		9EDF5A1126C7DD1D005D27AF /* ProfileHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHost.swift; sourceTree = "<group>"; };
 		9EE5AC6B26B9D87900E0665D /* S02BasicGuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = S02BasicGuideView.swift; sourceTree = "<group>"; };
+		9EE9D34626D8D31E00D7ADE0 /* MyTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTextView.swift; sourceTree = "<group>"; };
 		9EF5A4FB26B7F58200268B6B /* swiftuiTest02.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swiftuiTest02.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EF5A4FE26B7F58200268B6B /* swiftuiTest02App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftuiTest02App.swift; sourceTree = "<group>"; };
 		9EF5A50026B7F58200268B6B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -417,6 +419,7 @@
 			isa = PBXGroup;
 			children = (
 				9EE5AC6B26B9D87900E0665D /* S02BasicGuideView.swift */,
+				9EE9D34626D8D31E00D7ADE0 /* MyTextView.swift */,
 			);
 			name = "02.기본가이드";
 			path = "02.기본가이드";
@@ -689,6 +692,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				563650AE26C38DD60056076C /* Hike.swift in Sources */,
+				9EE9D34726D8D31E00D7ADE0 /* MyTextView.swift in Sources */,
 				5665DE9B26CB2835009DE843 /* PageView.swift in Sources */,
 				563650A626C382F20056076C /* HexagonParameters.swift in Sources */,
 				5665DEF526CB35E9009DE843 /* LandmarkList.swift in Sources */,

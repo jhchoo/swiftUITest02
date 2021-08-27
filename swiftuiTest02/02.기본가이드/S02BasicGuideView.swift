@@ -24,7 +24,7 @@ struct S02BasicGuideView: View {
     var isActive: Bool = false
     
     var body: some View {
-        Color(UIColor.dustyOrange).overlay(
+        Color(UIColor.orange).overlay(
             
             NavigationView {
                 VStack {
