@@ -1,128 +1,22 @@
-# This file contains the fastlane.tools configuration
-# You can find the documentation at https://docs.fastlane.tools
-#
-# For a list of all available actions, check out
-#
-#     https://docs.fastlane.tools/actions
-#
-# For a list of all available plugins, check out
-#
-#     https://docs.fastlane.tools/plugins/available-plugins
-#
-
-# Uncomment the line if you want fastlane to automatically update itself
-# update_fastlane
-
-default_platform(:ios)
-
-platform :ios do
-  desc "Description of what the lane does"
-  lane :custom_lane do
-    # add actions here: https://docs.fastlane.tools/actions
-  end
-end
-
 default_platform(:ios)
 
 platform :ios do
   
   lane :dev do
-    xcode_select('/Applications/Xcode.app')
     begin
-        slack_message("SMS 개발자 버전 배포를 시작 합니다.")
-        gym(
-            workspace: "SMS.xcworkspace",
-            scheme: "SMS",
+        desc "빌드를 시작 합니다."
+        build_app(
+            scheme: "swiftuiTest02",
             configuration: "Debug",
             export_method: "development",
             output_directory: "./build/Debug",
-            output_name: "SMS-Debug.ipa",
+            output_name: "swiftuiTest02-Debug.ipa",
+            include_bitcode: false,
             clean: true
         )
-        slack_message("SMS 개발자 버전 생성 완료!!")
     rescue => exception
-        slack_error(exception)
+      desc exception
     end
   end
   
-  lane :pro do
-    #빌드 넘버를 증가 시킨다.
-    increment_build_number(
-        xcodeproj: './SMS.xcodeproj'
-    )
-    
-    #버전 넘버 자동증가
-    increment_version_number_in_plist(
-        target: "SMS",
-        bump_type: "minor" # 자동증가
-    )
-    #버전 넘버 자동증가
-    increment_version_number_in_plist(
-        target: "ReachService",
-        bump_type: "minor" # 자동증가
-    )
-    
-    buildNumber = get_build_number
-    versionNumber = get_version_number(
-        target: "SMS"
-    )
-        
-    slack_message("SMS 운영 버전 배포를 시작 합니다.")
-    
-    begin
-        build_app(
-            scheme: "SMS",
-            configuration: "Release",
-            export_method: "enterprise",
-            output_directory: "./build/Release",
-            output_name: "SMS-Release.ipa",
-            clean: true
-        )
-        
-        slack_send({"versionNumber": versionNumber, "buildNumber": buildNumber})
-    rescue => exception
-        slack_error(exception)
-    end
-    
-  end
-  
-  lane :slack_send do |options|
-    slack(
-      message: "SMS 성공적으로 빌드 되었습니다.",
-      channel: "#sms-배포",
-      slack_url: "https://hooks.slack.com/services/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",
-      payload: {
-        "versionNumber": options[:versionNumber],
-        "buildNumber": options[:buildNumber]
-      },
-      default_payloads: [:git_branch, :last_git_commit_message]
-    )
-  end
-  
-end
-
-def slack_message(message)
-  slack(
-    message: message,
-    success: true,
-    slack_url: "https://hooks.slack.com/services/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",
-    default_payloads: [:git_branch]
-  )
-end
-
-def slack_error(exception)
-  slack(
-    message: "<!here> fastlane 빌드 중 문제가 발생하였습니다.",
-    success: false,
-    slack_url: "https://hooks.slack.com/services/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",
-    default_payloads: [:git_branch, :last_git_commit_message],
-    attachment_properties: {
-      fields: [
-        {
-            title: "에러 내역",
-            value: exception
-        }
-      ]
-    }
-  )
 end
