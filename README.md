@@ -15,9 +15,3 @@
 ----
 9. [프레임워크 통합 watchOS 앱 만들기](https://developer.apple.com/tutorials/swiftui/creating-a-watchos-app)
 10. [macOS 앱 만들기](https://developer.apple.com/tutorials/swiftui/creating-a-macos-app)
-
-### 개발하는 정대리 [아이폰 스위프트UI 뽀개기 씨리즈](https://www.youtube.com/watch?v=LiWtjXLlhYw&list=PLgOlaPUIbynqyJHiTEv7CFaXd8g5jtogT)
-
-1. 애플샘플 소개, 
-
-기억이 안나서 한번 더 복습한다.
